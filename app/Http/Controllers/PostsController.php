@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
+use DB;
+
 class PostsController extends Controller
 {
     /**
@@ -13,7 +17,14 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('created_at','desc')->paginate(10); //this is eloquent, alternative below //paginate with 10 posts per page
+        //$posts = DB::select('SELECT * from posts'); //to fetch posts directly via query
+
+        //$posts = Post::orderBy('created_at','desc')->take(1)->get(); //limit the number of posts
+
+        //return Post::where('title', 'Second Post')->get(); //return single post by title
+
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -45,7 +56,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
