@@ -19,7 +19,7 @@
 
 [![blogapp.png](https://s17.postimg.org/jclbr7rvz/blogapp.png)](https://postimg.org/image/3r4079fxn/)
 
-[![blogapp1.png](https://s17.postimg.org/pqaeuh4hr/blogapp1.png)](https://postimg.org/image/jclbr7zln/)
+[![blogapp1.png](https://s17.postimg.org/go9tn3vvj/blogapp1.png)](https://postimg.org/image/lzoq7thy3/)
 
 [![blogapp2.png](https://s17.postimg.org/3r407aasv/blogapp2.png)](https://postimg.org/image/ahkhgpxyj/)
 
@@ -27,5 +27,5 @@
 
 [![blogapp4.png](https://s17.postimg.org/qskld12qn/blogapp4.png)](https://postimg.org/image/f3glp2brv/)
 
-[![blogapp5.png](https://s17.postimg.org/565kw0jlr/blogapp5.png)](https://postimg.org/image/y8juyu5vf/)
+[![blogapp5.png](https://s17.postimg.org/mcg4e07xr/blogapp5.png)](https://postimg.org/image/z3uakihpn/)
 
