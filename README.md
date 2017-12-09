@@ -7,13 +7,14 @@
 * Type `composer install`
 * Type `composer update`
 * Copy *.env.example* to *.env*
-* Type `php artisan key:generate`to regenerate secure key
 * To use MySQL database, set the following in *.env* file :
    * set DB_CONNECTION=mysql
    * set DB_DATABASE
    * set DB_USERNAME
    * set DB_PASSWORD
 * Run DB migrations. Type `php artisan migrate --seed` to create and populate tables.
+* You may need to run `php artisan storage:link` to see the blog post images.
+* Also do put an image file with name `noimage.jpg` inside `storage/app/public/cover_images/` directory.
 
 #### Some screenshots of the app:
 
