@@ -42,12 +42,13 @@ class PostsApiController extends Controller
      */
     public function store(Request $request)
     {
-        $post = $request->isMethod('put') ? Post::findorFail
-        ($request->post_id) : new Post;
+        $post =  new Post;
 
-        $post->id = $request->input('post_id');
+
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->user_id = $request->input('user_id');
+        $post->cover_image = 'noimage.jpg'; //$request->input() ko through lyaunu parchha pachhi
 
         if ($post->save()){
             return new PostResource($post);
@@ -90,7 +91,18 @@ class PostsApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::findorFail($id);
+
+
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->user_id = $request->input('user_id');
+        $post->cover_image = 'noimage.jpg'; //$request->input() ko through lyaunu parchha pachhi
+        $post->updated_at = time();
+
+        if ($post->save()){
+            return new PostResource($post);
+        }
     }
 
     /**
@@ -101,15 +113,13 @@ class PostsApiController extends Controller
      */
     public function destroy($id)
     {
-        // get a single post
-        //$status_code = new Integer();
+
         $post = Post::findorFail($id);
+        //$status = "Deleted";
 
         if ($post->delete()){
+            //return $status;
             return new PostResource($post);
-        } else{
-//            $status_code = 900; //fail
-//            return $status_code;
         }
 
     }

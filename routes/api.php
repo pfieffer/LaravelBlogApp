@@ -27,7 +27,7 @@ Route::get('posts/{id}', 'PostsApiController@show');
 Route::post('post', 'PostsApiController@store');
 
 //update
-Route::put('post', 'PostsApiController@store');
+Route::put('post/{id}', 'PostsApiController@update');
 
 //delete
 Route::delete('post/{id}', 'PostsApiController@destroy');
