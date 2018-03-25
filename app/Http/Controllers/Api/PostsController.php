@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 use App\Post;
-
 use App\Http\Resources\Post as PostResource;
-
 use App\Http\Requests;
 use phpDocumentor\Reflection\Types\Integer;
 
-class PostsApiController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
