@@ -16,4 +16,13 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    public function getImageUrl($value)
+    {
+      if ($value) {
+          return asset('storage/cover_images/' . $value);
+      } else {
+          return asset('storage/cover_images/noimage.jpg');
+      }
+    }
 }

@@ -20,7 +20,7 @@ class Post extends Resource
             'title' => $this->title,
             'body' => $this->body,
             'user_id' => $this->user_id,
-            'cover_image' => $this->cover_image
+            'cover_image' => "storage/cover_images/".$this->cover_image
         ];
     }
 }

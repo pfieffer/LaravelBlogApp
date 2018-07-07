@@ -4,10 +4,14 @@
     <div class="container">
         <a href="/posts" class="btn btn-default">Go back</a>
         <h1> {{$post->title}} </h1>
-        <img width="100%" src="/storage/cover_images/{{$post -> cover_image}}">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+              <img width="100%" src="/storage/cover_images/{{$post -> cover_image}}">
+          </div>
+        </div>
         <br><br>
 
-        <div>
+        <div class="well">
             {!! $post->body !!}
         </div>
 
