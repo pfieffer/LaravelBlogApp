@@ -8,8 +8,6 @@ use App\Post;
 use App\Http\Resources\Post as PostResource;
 use App\Http\Requests;
 use phpDocumentor\Reflection\Types\Integer;
-use Validator;
-use File;
 
 class PostsController extends Controller
 {
@@ -43,33 +41,12 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $user = Auth()->user();
-
-        $validator = Validator::make($request->all(), [
-            'title' => 'required',
-            'body' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            foreach ($validator->errors()->toArray() as $key => $value){
-                $errors[] = $value[0];
-            }
-            return response(['errors'=>$errors]);
-        }
-
         $post =  new Post;
 
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->user_id = $user->id;
-        if($request->has('cover_image')){
-            $image = $request->input('cover_image');  // your base64 encoded
-            $image = str_replace('data:image/png;base64,', '', $image);
-            $image = str_replace(' ', '+', $image);
-            $imageName = str_random(10).'.'.'png';
-            File::put(storage_path(). '/' . $imageName, base64_decode($image));
-        } else{
-            $post->cover_image = 'noimage.jpg'; //$request->input() ko through lyaunu parchha pachhi
-        }
+        $post->cover_image = 'noimage.jpg'; //$request->input() ko through lyaunu parchha pachhi
 
         if ($post->save()){
             return new PostResource($post);

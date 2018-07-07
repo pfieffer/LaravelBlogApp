@@ -13,24 +13,29 @@ use Illuminate\Http\Request;
 |
 */
 
-//list posts
-Route::get('posts', 'Api\PostsController@index');
+Route::post('login', 'UserController@login');
+Route::post('register', 'UserController@register');
 
-//specific post
-Route::get('posts/{id}', 'Api\PostsController@show');
-
-//create new post
-Route::post('post', 'Api\PostsController@store');
-
-//update
-Route::put('post/{id}', 'Api\PostsController@update');
-
-//delete
-Route::delete('post/{id}', 'Api\PostsController@destroy');
+//list all posts: Does not require any guards
+Route::get('posts', 'PostsController@index');
 
 
-Route::post('login', 'Api\UserController@login');
-Route::post('register', 'Api\UserController@register');
-Route::group(['middleware' => 'auth:api'], function(){
-    Route::post('details', 'Api\UserController@details');
+//guarded apis
+Route::middleware('auth:api')->group(function(){
+    //create new post [C]
+    Route::post('post', 'PostsController@store');
+    //get posts of this particular user [R]
+    Route::get('posts', 'UserController@getPostsOfUser');
+    //update post [U]
+    Route::put('posts/{id}', 'PostsController@update');
+    //delete [D]
+    Route::delete('posts/{id}', 'PostsController@destroy');
+    //view specific post
+    Route::get('posts/{id}', 'PostsController@show');
+    //get user details
+    Route::post('userdetails', 'UserController@details');
 });
+
+Route::get('/user', function (Request $request) {
+    return $request->user() ; 
+})->middleware('auth:api');
