@@ -17,7 +17,7 @@ Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 
 //list all posts: Does not require any guards
-Route::get('posts', 'PostsController@index');
+Route::get('allposts', 'PostsController@index');
 
 
 //guarded apis

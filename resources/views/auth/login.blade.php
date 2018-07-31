@@ -63,6 +63,16 @@
                     </form>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Or use Social Login</div>
+                
+                @include('partials.socials')
+                
+                {!! Form::close() !!}
+            </div>
+
+            </div>
         </div>
     </div>
 </div>

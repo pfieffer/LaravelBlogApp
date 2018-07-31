@@ -30,5 +30,6 @@
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
