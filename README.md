@@ -4,8 +4,8 @@
 
 ## To test:
 
-* Type `git clone https://github.com/pfieffer/HelloLara.git` or `git clone git@github.com:pfieffer/HelloLara.git` to clone the repository.
-* CD to `HelloLara`
+* Type `git clone https://github.com/pfieffer/LaravelBlogApp.git` or `git clone git@github.com:pfieffer/LaravelBlogApp.git` to clone the repository.
+* CD to `LaravelBlogApp`
 * Type `composer install`
 * Type `composer update`
 * Copy *.env.example* to *.env*
