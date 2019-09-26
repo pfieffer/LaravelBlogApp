@@ -14,7 +14,7 @@
    * set DB_DATABASE
    * set DB_USERNAME
    * set DB_PASSWORD
-* Run DB migrations. Type `php artisan migrate --seed` to create and populate tables.
+* Run DB migrations and seeders:  Type `php artisan migrate --seed` to create and populate tables. This will seed the datbase with some sample posts and a user. (User Credentials: email: *test@test.com*, password: *test@123*)
 * Run `php artisan key:generate` to generate application keys
 * You may need to run `php artisan storage:link` to see the blog post images.
 * Also do put an image file with name `noimage.jpg` inside `storage/app/public/cover_images/` directory.
